@@ -1,0 +1,1229 @@
+{
+  "config": {
+    "configFile": "/t/playwright.config.ts",
+    "rootDir": "/t/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/t/fixtures/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ],
+      [
+        "html"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/t/test-results",
+        "repeatEach": 8,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/t/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "part2/nfr.spec.ts",
+      "file": "part2/nfr.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3809,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 948
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 688
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 4260
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 921
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:03:27.133Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-6c37e693da6d994bc693",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7739,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 455
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 515
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 588
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 306
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 360
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 830
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 758
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 535
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 499
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 462
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 457
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 331
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 320
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 839
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:03:34.656Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-7d75aa617aed12743fa2",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3455,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 841
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 620
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 615
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 862
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:03:42.851Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-59f0e83ddebebf87381e",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6635,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 531
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 386
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 489
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 307
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 339
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 704
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 350
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 388
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 447
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 429
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 429
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 262
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 260
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 796
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:03:46.355Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-989b1e154d81cfc3f091",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3520,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 891
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 654
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 602
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 867
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:03:53.449Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-35af8c9042a064760820",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6534,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 381
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 364
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 487
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 300
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 342
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 684
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 347
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 386
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 448
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 526
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 419
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 278
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 296
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 788
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:03:57.019Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-4178301c5b4d7a03a124",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 787
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 4168
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 557
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 847
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:03.995Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-03caec92bf7ecfc5e46c",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 380
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 335
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 526
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 294
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 331
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 692
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 400
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 426
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 498
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 513
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 438
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 277
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 272
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 779
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:10.864Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-5211b9af3ab649772683",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 839
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 587
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 629
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 869
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:17.944Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-4e39b30f694d08e1f910",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 367
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 360
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 479
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 280
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 314
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 697
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 373
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 418
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 510
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 465
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 453
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 285
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 319
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 915
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:21.461Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-d2622441d0c78095d131",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 859
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 643
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 601
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 837
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:28.677Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-c6ed6c096c4a2f32275f",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6493,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 386
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 438
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 555
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 327
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 361
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 691
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 333
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 377
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 426
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 446
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 418
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 265
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 261
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 770
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:32.217Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-12957927236fef7d6fa5",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3320,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 828
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 607
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 4156
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 851
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:39.146Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-c6bb90453f58ce05f7ff",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6381,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 362
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 358
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 465
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 274
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 326
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 682
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 322
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 379
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 451
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 428
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 470
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 323
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 257
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 822
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:46.092Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-7b44b951f4af789ddba6",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3731,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "375×812: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 1038
+                    },
+                    {
+                      "title": "768×1024: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 721
+                    },
+                    {
+                      "title": "1280×800: 11 หน้าไม่มี scroll แนวนอน",
+                      "duration": 625
+                    },
+                    {
+                      "title": "งานหลักที่ 375 px: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน → create-qr-btn อยู่ในจอ",
+                      "duration": 889
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:52.924Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-d0d7cbdbeb6bb3180fac",
+          "file": "part2/nfr.spec.ts",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6688,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "/login (anon): axe · label · สถานะ",
+                      "duration": 431
+                    },
+                    {
+                      "title": "/register (citizen 5500400111221): axe · label · สถานะ",
+                      "duration": 420
+                    },
+                    {
+                      "title": "/citizen (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 571
+                    },
+                    {
+                      "title": "/citizen/new/SV-01 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 318
+                    },
+                    {
+                      "title": "/citizen/cases/EG-2569-000017 (citizen 1101700123456): axe · label · สถานะ",
+                      "duration": 350
+                    },
+                    {
+                      "title": "/officer/queue (off.reg1): axe · label · สถานะ",
+                      "duration": 671
+                    },
+                    {
+                      "title": "/officer/cases/EG-2569-000020 (off.reg1): axe · label · สถานะ",
+                      "duration": 366
+                    },
+                    {
+                      "title": "/head/approvals (head1): axe · label · สถานะ",
+                      "duration": 414
+                    },
+                    {
+                      "title": "/dashboard (exec1): axe · label · สถานะ",
+                      "duration": 476
+                    },
+                    {
+                      "title": "/audit (audit1): axe · label · สถานะ",
+                      "duration": 470
+                    },
+                    {
+                      "title": "/admin/services (admin1): axe · label · สถานะ",
+                      "duration": 403
+                    },
+                    {
+                      "title": "/notifications (off.reg1): axe · label · สถานะ",
+                      "duration": 253
+                    },
+                    {
+                      "title": "/verify/K7M2Q9XA (anon): axe · label · สถานะ",
+                      "duration": 277
+                    },
+                    {
+                      "title": "ส่วน B คีย์บอร์ดอย่างเดียว: ล็อกอิน → SV-01 → แนบไฟล์ → ไปชำระเงิน",
+                      "duration": 793
+                    }
+                  ],
+                  "startTime": "2026-11-23T06:04:56.704Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8a5d96b08b2f016b9a1c-96e40f157d3059153c2b",
+          "file": "part2/nfr.spec.ts",
+          "line": 185,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-23T06:03:26.459Z",
+    "duration": 86245.545,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

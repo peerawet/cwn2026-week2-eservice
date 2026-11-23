@@ -18,6 +18,7 @@ import {
   type APIResponse,
   type Browser,
   type BrowserContext,
+  type Download,
   type Locator,
   type Page,
   type Response,
@@ -493,12 +494,17 @@ export async function expectVerifyResult(a: Actor, text: string, code: string): 
 
 // ───────────────────────── ดักไฟล์ดาวน์โหลด ─────────────────────────
 
-export type Captured = { url: string; status: number; headers: Record<string, string>; body: Buffer };
+/** viaDownload = true เมื่อได้ไฟล์จากเหตุการณ์ download ของเบราว์เซอร์ (ลิงก์ <a download>) ซึ่งอ่าน header ไม่ได้ */
+export type Captured = { url: string; status: number; headers: Record<string, string>; body: Buffer; viaDownload?: boolean };
 
 /**
- * กดปุ่มดาวน์โหลด/ส่งออกแล้วดัก response ของไฟล์ (ผ่าน context.route + route.fetch ส่งต่อ response เดิม)
- * เซิร์ฟเวอร์ได้รับคำขอเพียงครั้งเดียว (ไม่เรียกซ้ำ จึงไม่เพิ่มแถว Audit EXPORT)
- * จับเมื่อ HTTP 2xx และ (URL ตรง match.url หรือ Content-Type ตรง match.contentType) และไม่ใช่หน้า HTML
+ * กดปุ่มดาวน์โหลด/ส่งออกแล้วดักไฟล์ได้ 2 ทาง ทั้งสองทางเซิร์ฟเวอร์ได้รับคำขอเพียงครั้งเดียว
+ * (ไม่เรียกซ้ำ จึงไม่เพิ่มแถว Audit EXPORT)
+ *  1) context.route + route.fetch ส่งต่อ response เดิม — ใช้กับ fetch/XHR/ลิงก์ที่ไม่มี attribute download
+ *     จับเมื่อ HTTP 2xx และ (URL ตรง match.url หรือ Content-Type ตรง match.contentType) และไม่ใช่หน้า HTML
+ *  2) เหตุการณ์ download ของเบราว์เซอร์ — ลิงก์ <a download> ถูกจัดการก่อนถึงชั้นเครือข่าย
+ *     จึงไม่ผ่าน route (ตรวจแล้ว: route/response/CDP ไม่เห็นคำขอ) · จับเมื่อ URL ตรง match.url เท่านั้น
+ *     และ headers เป็นค่าว่าง (ถ้าต้องตรวจ header ให้ตรวจด้วยคำขอตรงในขั้นถัดไปที่ไม่กระทบจำนวน Audit)
  */
 export async function captureFile(
   a: Actor,
@@ -536,6 +542,21 @@ export async function captureFile(
     }
     await route.fulfill({ response: resp }).catch(() => {});
   };
+  const onDownload = async (d: Download) => {
+    if (done || !match.url || !match.url.test(d.url())) return;
+    done = true;
+    const chunks: Buffer[] = [];
+    for await (const c of await d.createReadStream()) chunks.push(c as Buffer);
+    resolve({ url: d.url(), status: 200, headers: {}, body: Buffer.concat(chunks), viaDownload: true });
+  };
+  const watched = new Set<Page>();
+  const watch = (p: Page) => {
+    if (watched.has(p)) return;
+    watched.add(p);
+    p.on('download', onDownload);
+  };
+  a.ctx.pages().forEach(watch);
+  a.ctx.on('page', watch);
   await a.ctx.route('**/*', handler);
   let timer: NodeJS.Timeout | undefined;
   try {
@@ -548,6 +569,8 @@ export async function captureFile(
     ]);
   } finally {
     if (timer) clearTimeout(timer);
+    a.ctx.off('page', watch);
+    watched.forEach((p) => p.off('download', onDownload));
     await a.ctx.unroute('**/*', handler).catch(() => {});
   }
 }
@@ -726,7 +749,9 @@ export function pdfTextStrings(buf: Buffer): string[] {
     }
     for (const line of src.split(/\r?\n/)) if (/^[ -~]*\b\w+=\S/.test(line) && line.length < 400) out.push(line);
   }
-  return out;
+  // วันที่ใน metadata ของ PDF (/CreationDate (D:20261123055909Z)) ไม่ใช่ "ข้อความ" ตามการ์ด (ตรวจบนข้อความที่ดึงออกมา)
+  // ตัดเฉพาะ string รูปแบบวันที่ของ PDF · เลข 13 หลัก/เบอร์โทรในเนื้อหายังถูกตรวจเหมือนเดิม
+  return out.filter((s) => !/^D:\d{8,14}([Zz]|[+-]\d{2}'?\d{0,2}'?)?$/.test(s.trim()));
 }
 
 // ───────────────────────── CSV ─────────────────────────

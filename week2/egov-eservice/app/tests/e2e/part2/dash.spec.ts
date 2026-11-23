@@ -147,9 +147,13 @@ test('TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ'
     await exportXlsx(['26', '7', '85.7%', '21', '1'], 'xlsx พ.ย.');
   });
 
+  let pdfUrl = '';
   await test.step('พ.ย. ALL → pdf มีบรรทัด kpi', async () => {
     const f = await captureFile(exec, { url: /export/i, contentType: /application\/pdf/i }, () => exec.tid('export-pdf-btn').click());
-    expect(f.headers['content-type'] ?? '', 'Content-Type').toMatch(/^application\/pdf/i);
+    pdfUrl = f.url;
+    // ลิงก์ <a download> อ่าน header ไม่ได้ → Content-Type ตรวจในขั้นท้ายด้วยคำขอตรง (หลังตรวจจำนวน Audit EXPORT แล้ว)
+    if (!f.viaDownload) expect(f.headers['content-type'] ?? '', 'Content-Type').toMatch(/^application\/pdf/i);
+    expect(f.body.subarray(0, 5).toString('latin1'), 'ไฟล์ต้องขึ้นต้นด้วย %PDF-').toBe('%PDF-');
     expect(pdfSearchable(f.body)).toMatch(/kpi received=26 closed=7 ontime=85\.7% backlog=21 overdue=1(?![0-9])/);
     expect(piiFindings(pdfTextStrings(f.body)), 'ข้อมูลส่วนบุคคลใน PDF').toEqual([]);
   });
@@ -171,6 +175,14 @@ test('TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ'
     expect(has('xlsx', '2026-11'), 'EXPORT xlsx 2026-11').toBe(1);
     expect(has('pdf', '2026-11'), 'EXPORT pdf 2026-11').toBe(1);
     expect(has('xlsx', '2026-12'), 'EXPORT xlsx 2026-12').toBe(1);
+  });
+
+  // ตรวจ Content-Type ของ PDF ด้วยคำขอตรง — ทำหลังนับ Audit EXPORT แล้ว เพราะคำขอนี้เพิ่มแถว EXPORT อีก 1 แถว
+  await test.step('pdf พ.ย. → Content-Type: application/pdf', async () => {
+    expect(pdfUrl, 'ต้องมี URL ของ PDF จากขั้นก่อนหน้า').not.toBe('');
+    const res = await exec.ctx.request.get(pdfUrl);
+    expect(res.status(), 'HTTP status ของ pdf').toBe(200);
+    expect(res.headers()['content-type'] ?? '', 'Content-Type').toMatch(/^application\/pdf/i);
   });
 });
 

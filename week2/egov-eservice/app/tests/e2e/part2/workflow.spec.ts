@@ -365,7 +365,7 @@ test('TC-WORKFLOW-05 · เหตุผล ≥ 10 ตัวอักษร (ต�
     await expect(reg1.tid('case-status')).toHaveText('กำลังตรวจสอบ');
 
     // เว้นวรรคล้วน 10 ตัว (เปิดหน้าใหม่ก่อน เพื่อให้ข้อความ error ต้องปรากฏใหม่)
-    await expect(reg1.tid('return-reason-error')).toHaveCount(0);
+    await expect(reg1.tid('return-reason-error')).not.toBeVisible(); // ไม่มีข้อความ error ที่มองเห็น (การ์ดไม่ได้กำหนดว่า element ต้องไม่ถูก render)
     await reasonSubmit(reg1.page, 'return', SPACES);
     await expect(reg1.tid('return-reason-error')).toHaveText(MSG.reasonTooShort);
     await expectStatus(await returnApi(reg1, C20, SPACES), 400, 'REASON_TOO_SHORT', 'return เว้นวรรค 10 ตัว');

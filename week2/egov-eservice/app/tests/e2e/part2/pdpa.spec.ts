@@ -124,7 +124,8 @@ test('TC-PDPA-03 · แสดงเลขเต็มต้องมีเหต
 
   await test.step('2 เหตุผลเว้นวรรคล้วน → ข้อความเดียวกัน', async () => {
     await reg2.open(`/officer/cases/${C25}`);
-    await expect(reg2.tid('unmask-error')).toHaveCount(0);
+    // เงื่อนไขเริ่มต้น: หน้าใหม่ต้องไม่มีข้อความ error ที่มองเห็น (การ์ด/CONTRACT ไม่ได้กำหนดว่า element ต้องไม่ถูก render)
+    await expect(reg2.tid('unmask-error')).not.toBeVisible();
     await reasonSubmit(reg2.page, 'unmask', '     ');
     await expect(reg2.tid('unmask-error')).toHaveText(MSG.reasonRequired);
     await expect(reg2.tid('full-id')).toHaveCount(0);

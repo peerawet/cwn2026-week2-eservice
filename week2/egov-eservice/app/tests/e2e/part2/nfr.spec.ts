@@ -91,6 +91,8 @@ test('TC-NFR-01 · Responsive 375 / 768 / 1280', async ({ lab }) => {
     await page.getByTestId('qty-input').fill('1');
     await expect(page.getByTestId('fee-total')).toHaveText('฿20');
     await page.getByTestId('to-upload-btn').click();
+    // รอเข้าขั้น 2 ก่อนแนบไฟล์ (CONTRACT 2.5 wizard-step) — ไม่เช่นนั้นไฟล์ถูกใส่ก่อนที่เว็บสร้างร่างเสร็จ ซึ่งผู้ใช้จริงทำไม่ได้
+    await expect(page.getByTestId('wizard-step')).toHaveText('2/3 แนบเอกสาร');
     await page.getByTestId('upload-input-id-card').setInputFiles(testFilePath('id-card.pdf'));
     await expect(page.locator('[data-testid="file-item"][data-doc-key="id-card"]')).toHaveCount(1);
     await expect(page.getByTestId('to-payment-btn')).toBeEnabled();
@@ -261,6 +263,8 @@ test('TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถา�
     await page.keyboard.type('1');
     await tabTo(page, 'to-upload-btn');
     await page.keyboard.press('Enter');
+    // ช่องไฟล์อยู่ใน DOM ตั้งแต่โหลดหน้า (toBeAttached จึงจริงเสมอ) → ต้องรอเข้าขั้น 2 จริงก่อน (CONTRACT 2.5 wizard-step)
+    await expect(page.getByTestId('wizard-step')).toHaveText('2/3 แนบเอกสาร');
     await expect(page.getByTestId('upload-input-id-card')).toBeAttached();
     await tabTo(page, 'upload-input-id-card');
     // เลือกไฟล์จาก OS ด้วยคีย์บอร์ดไม่ได้ → ใส่ไฟล์ให้ช่องที่โฟกัสอยู่ (ไม่ใช้เมาส์)
