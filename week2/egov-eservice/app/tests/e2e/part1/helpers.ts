@@ -17,6 +17,9 @@ import {
   type Page,
   type Locator,
 } from '@playwright/test';
+
+/** PW_VIDEO=on → อัดวิดีโอของทุก context ที่เทสต์สร้างเอง (config use.video ครอบคลุมเฉพาะ page fixture) ลง test-results/by-tc/<รหัส TC>/ ไว้ทำ GIF */
+const videoOpt = () => (process.env.PW_VIDEO === "on" ? { recordVideo: { dir: path.join("test-results", "by-tc", (base.info().title.match(/^(TC-[A-Z]+-\d+)/) || [])[1] ?? "misc"), size: { width: 800, height: 450 } } } : {});
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -117,7 +120,7 @@ export class Session {
 
   /** browser context ใหม่ + page (ยังไม่ล็อกอิน) */
   async newPage(): Promise<Page> {
-    const ctx = await this.browser.newContext({ baseURL: BASE_URL, locale: 'th-TH', timezoneId: 'Asia/Bangkok' });
+    const ctx = await this.browser.newContext({ baseURL: BASE_URL, locale: 'th-TH', timezoneId: 'Asia/Bangkok', ...videoOpt() });
     this.ctxs.push(ctx);
     const page = await ctx.newPage();
     page.on('dialog', (d) => d.accept().catch(() => {}));

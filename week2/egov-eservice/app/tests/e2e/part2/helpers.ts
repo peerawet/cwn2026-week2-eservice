@@ -25,6 +25,9 @@ import {
   type Route,
 } from '@playwright/test';
 
+/** PW_VIDEO=on → อัดวิดีโอของทุก context ที่เทสต์สร้างเอง (config use.video ครอบคลุมเฉพาะ page fixture) ลง test-results/by-tc/<รหัส TC>/ ไว้ทำ GIF */
+const videoOpt = () => (process.env.PW_VIDEO === "on" ? { recordVideo: { dir: path.join("test-results", "by-tc", (base.info().title.match(/^(TC-[A-Z]+-\d+)/) || [])[1] ?? "misc"), size: { width: 800, height: 450 } } } : {});
+
 export { expect };
 
 // ───────────────────────── ค่าคงที่ (TEST-DATA / CONTRACT) ─────────────────────────
@@ -206,6 +209,7 @@ export class Lab {
       locale: 'th-TH',
       timezoneId: 'Asia/Bangkok',
       ...(viewport ? { viewport } : {}),
+      ...videoOpt(),
     });
     const page = await ctx.newPage();
     const a = new Actor(label, ctx, page);

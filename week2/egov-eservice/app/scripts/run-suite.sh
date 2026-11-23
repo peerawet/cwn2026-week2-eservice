@@ -37,7 +37,7 @@ if [ ! -d "$WORK/node_modules/@playwright" ]; then
   docker run --rm -v "$WORK:/t" -w /t "$IMG" sh -c "npm ci --no-audit --no-fund && chown -R $(id -u):$(id -g) /t" >"$OUT/npm-ci.log" 2>&1 || { tail -20 "$OUT/npm-ci.log"; exit 3; }
 fi
 
-rm -rf "$WORK/runs"
+rm -rf "$WORK/runs" "$WORK/test-results"
 docker run --rm --network host --ipc=host \
   -v "$WORK:/t" -v "$HERE/data:/data:ro" -w /t \
   -e BASE_URL="http://localhost:$PORT" -e DB_PATH=/data/egov.db \
