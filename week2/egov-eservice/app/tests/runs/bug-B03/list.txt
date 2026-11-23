@@ -1,0 +1,348 @@
+
+Running 51 tests using 1 worker
+
+  ✓   1 [chromium] › e2e/part1/auth.spec.ts:19:5 › TC-AUTH-01 · เลขบัตร 13 หลัก + checksum (2.3s)
+  ✓   2 [chromium] › e2e/part1/auth.spec.ts:60:5 › TC-AUTH-02 · OTP ผิด 3 ครั้งล็อก 15 นาที (1.7s)
+  ✓   3 [chromium] › e2e/part1/auth.spec.ts:161:5 › TC-AUTH-03 · ลงทะเบียนครั้งแรก (1.8s)
+  ✓   4 [chromium] › e2e/part1/auth.spec.ts:248:5 › TC-AUTH-04 · เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น (3.0s)
+  ✓   5 [chromium] › e2e/part1/fee.spec.ts:39:5 › TC-FEE-01 · ค่าธรรมเนียม SV-01 / SV-02 / SV-03 (1.1s)
+  ✓   6 [chromium] › e2e/part1/noti.spec.ts:62:5 › TC-NOTI-01 · ผู้รับแจ้งเตือนตามระดับ (874ms)
+Internal error: step id not found: fixture@258Internal error: step id not found: fixture@258Internal error: step id not found: fixture@258Internal error: step id not found: fixture@258
+  ✘   7 [chromium] › e2e/part1/noti.spec.ts:67:5 › TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร (9.0s)
+  ✓   8 [chromium] › e2e/part1/pay.spec.ts:18:5 › TC-PAY-01 · อายุ QR 15:00 (603ms)
+  ✓   9 [chromium] › e2e/part1/pay.spec.ts:67:5 › TC-PAY-02 · ยอดเงินและ callback ซ้ำ (207ms)
+  ✓  10 [chromium] › e2e/part1/pay.spec.ts:99:5 › TC-PAY-03 · ชำระพร้อมกัน เลขไม่ซ้ำ (420ms)
+  ✓  11 [chromium] › e2e/part1/pay.spec.ts:138:5 › TC-PAY-04 · เลขคำขอข้ามปี (857ms)
+  ✓  12 [chromium] › e2e/part1/queue.spec.ts:30:5 › TC-QUEUE-01 · ลำดับคิวและขอบเขตแผนก (929ms)
+  ✓  13 [chromium] › e2e/part1/queue.spec.ts:108:5 › TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน) (959ms)
+  ✓  14 [chromium] › e2e/part1/queue.spec.ts:171:5 › TC-QUEUE-03 · งานในมือสูงสุด 10 (2.3s)
+Internal error: step id not found: fixture@131Internal error: step id not found: fixture@131
+  ✘  15 [chromium] › e2e/part1/sla.spec.ts:43:5 › TC-SLA-01 · กำหนดเสร็จตามตารางวันที่ (800ms)
+  ✘  16 [chromium] › e2e/part1/sla.spec.ts:69:5 › TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข (8.1s)
+Internal error: step id not found: fixture@216Internal error: step id not found: fixture@216Internal error: step id not found: fixture@216Internal error: step id not found: fixture@216Internal error: step id not found: fixture@216Internal error: step id not found: fixture@216Internal error: step id not found: fixture@216Internal error: step id not found: fixture@216
+  ✘  17 [chromium] › e2e/part1/sla.spec.ts:157:5 › TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด (8.9s)
+  ✓  18 [chromium] › e2e/part1/submit.spec.ts:22:5 › TC-SUBMIT-01 · ยื่นคำขอ SV-01 ครบวงจร (1.4s)
+  ✓  19 [chromium] › e2e/part1/submit.spec.ts:98:5 › TC-SUBMIT-02 · เอกสารบังคับครบก่อนชำระ (1.5s)
+  ✓  20 [chromium] › e2e/part1/submit.spec.ts:160:5 › TC-SUBMIT-03 · ร่าง และการยกเลิก (2.1s)
+  ✓  21 [chromium] › e2e/part1/upload.spec.ts:19:5 › TC-UPLOAD-01 · ขนาดและจำนวนไฟล์ (5.3s)
+  ✓  22 [chromium] › e2e/part1/upload.spec.ts:98:5 › TC-UPLOAD-02 · ชนิดไฟล์จากเนื้อไฟล์ (2.4s)
+  ✓  23 [chromium] › e2e/part2/audit.spec.ts:44:5 › TC-AUDIT-01 · เหตุการณ์และฟิลด์ใน Audit (1.2s)
+  ✓  24 [chromium] › e2e/part2/audit.spec.ts:169:5 › TC-AUDIT-02 · Audit แก้/ลบไม่ได้ (405) (307ms)
+  ✓  25 [chromium] › e2e/part2/audit.spec.ts:208:5 › TC-AUDIT-03 · กรองช่วงวันที่ตามเวลาไทย (1.1s)
+  ✓  26 [chromium] › e2e/part2/dash.spec.ts:51:5 › TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น (450ms)
+  ✓  27 [chromium] › e2e/part2/dash.spec.ts:98:5 › TC-DASH-02 · Dashboard ย้อนหลัง (868ms)
+  ✓  28 [chromium] › e2e/part2/dash.spec.ts:121:5 › TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ (791ms)
+  ✓  29 [chromium] › e2e/part2/dash.spec.ts:189:5 › TC-DASH-04 · ค่าขอบ "ทันกำหนด" 16:29:59 / 16:30:00 / 16:30:01 (838ms)
+  ✓  30 [chromium] › e2e/part2/doc.spec.ts:30:5 › TC-DOC-01 · ออกเอกสารและข้อมูลในเอกสาร (836ms)
+  ✓  31 [chromium] › e2e/part2/doc.spec.ts:93:5 › TC-DOC-02 · ตรวจเอกสาร /verify (245ms)
+  ✓  32 [chromium] › e2e/part2/doc.spec.ts:132:5 › TC-DOC-03 · เอกสารหมดอายุและลายเซ็นไม่ตรง (1.4s)
+  ✓  33 [chromium] › e2e/part2/nfr.spec.ts:48:5 › TC-NFR-01 · Responsive 375 / 768 / 1280 (3.2s)
+  ✓  34 [chromium] › e2e/part2/nfr.spec.ts:185:5 › TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว (6.4s)
+  ✓  35 [chromium] › e2e/part2/nfr.spec.ts:291:5 › TC-NFR-03 · Health เวลาโหลด และผลซ้ำได้ (1.5s)
+  ✓  36 [chromium] › e2e/part2/nfr.spec.ts:385:5 › TC-NFR-04 · เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection) (176ms)
+  ✓  37 [chromium] › e2e/part2/pdpa.spec.ts:24:5 › TC-PDPA-01 · ปิดบังเลขบัตรบนจอ (661ms)
+  ✓  38 [chromium] › e2e/part2/pdpa.spec.ts:66:5 › TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม (255ms)
+  ✓  39 [chromium] › e2e/part2/pdpa.spec.ts:111:5 › TC-PDPA-03 · แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit (1.4s)
+  ✓  40 [chromium] › e2e/part2/rbac.spec.ts:27:5 › TC-RBAC-01 · ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) (318ms)
+  ✓  41 [chromium] › e2e/part2/rbac.spec.ts:64:5 › TC-RBAC-02 · เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) (642ms)
+  ✓  42 [chromium] › e2e/part2/rbac.spec.ts:173:5 › TC-RBAC-03 · ตารางสิทธิ์หน้า/API ตามบทบาท (5.4s)
+  ✘  43 [chromium] › e2e/part2/rbac.spec.ts:235:5 › TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก (1.5s)
+  ✓  44 [chromium] › e2e/part2/rbac.spec.ts:359:5 › TC-RBAC-05 · สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ (1.4s)
+  ✓  45 [chromium] › e2e/part2/rbac.spec.ts:431:5 › TC-RBAC-06 · ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ (1.8s)
+  ✓  46 [chromium] › e2e/part2/workflow.spec.ts:40:5 › TC-WORKFLOW-01 · SV-01 อนุมัติ + ออกเอกสาร (837ms)
+  ✓  47 [chromium] › e2e/part2/workflow.spec.ts:102:5 › TC-WORKFLOW-02 · SV-02 ผ่านหัวหน้า (1.7s)
+  ✓  48 [chromium] › e2e/part2/workflow.spec.ts:175:5 › TC-WORKFLOW-03 · SV-03 สามขั้นตอน (1.6s)
+  ✓  49 [chromium] › e2e/part2/workflow.spec.ts:250:5 › TC-WORKFLOW-04 · ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ (1.9s)
+  ✓  50 [chromium] › e2e/part2/workflow.spec.ts:348:5 › TC-WORKFLOW-05 · เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ) (1.8s)
+  ✓  51 [chromium] › e2e/part2/workflow.spec.ts:421:5 › TC-WORKFLOW-06 · เวลาแก้ไข 168 ชั่วโมง (842ms)
+
+
+  1) [chromium] › e2e/part1/noti.spec.ts:67:5 › TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร › ส่วน B ข้ามระดับ: request แรกที่ ส. 5 ธ.ค. 10:00 (TEST-DATA 8.1) 
+
+    Error: bell-count off.reg2
+
+    [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  getByTestId('bell-count')
+    Expected: [32m"10"[39m
+    Received: [31m"9"[39m
+    Timeout:  7000ms
+
+    Call log:
+    [2m  - bell-count off.reg2 with timeout 7000ms[22m
+    [2m  - waiting for getByTestId('bell-count')[22m
+    [2m    11 × locator resolved to <span class="count" data-testid="bell-count">9</span>[22m
+    [2m       - unexpected value "9"[22m
+
+
+      14 |   const want = [...expected].sort();
+      15 |   await page.goto('/notifications');
+    > 16 |   await expect(page.getByTestId('bell-count'), `bell-count ${who}`).toHaveText(String(want.length));
+         |                                                                     ^
+      17 |   if (want.length === 0) {
+      18 |     await expect(page.getByTestId('noti-empty')).toHaveText('ไม่มีแจ้งเตือน');
+      19 |     await expect(page.getByTestId('noti-item')).toHaveCount(0);
+        at expectNoti (/t/e2e/part1/noti.spec.ts:16:69)
+        at /t/e2e/part1/noti.spec.ts:104:5
+        at /t/e2e/part1/noti.spec.ts:81:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/test-failed-8.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e/part1/sla.spec.ts:43:5 › TC-SLA-01 · กำหนดเสร็จตามตารางวันที่ › แถว c: SV-01 ชำระ 2026-12-01T16:30:00+07:00 → 2026-12-08T16:30:00+07:00 
+
+    Error: dueAt แถว c
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"2026-12-0[7m8[27mT16:30:00+07:00"[39m
+    Received: [31m"2026-12-0[7m7[27mT16:30:00+07:00"[39m
+
+      60 |       const p = await newPaid(s, { service: r.service, at: r.at, areaSqm: r.areaSqm });
+      61 |       expect(p.caseNo).toBe(C31);
+    > 62 |       expect((await getCase(p.api, C31)).dueAt, `dueAt แถว ${r.id}`).toBe(r.due);
+         |                                                                      ^
+      63 |       await p.page.goto(`/citizen/cases/${C31}`);
+      64 |       await expectSlaDue(p.page, r.due, r.text);
+      65 |     });
+        at /t/e2e/part1/sla.spec.ts:62:70
+        at /t/e2e/part1/sla.spec.ts:58:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e/part1/sla.spec.ts:69:5 › TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข › ส่วน 1: ตีกลับ พ.2 11:00 · ส่งแก้ พฤ.3 10:00 → dueAt 8 ธ.ค. 16:30 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  getByTestId('sla-due')
+    Expected: [32m"2026-12-0[7m8[27mT16:30:00+07:00"[39m
+    Received: [31m"2026-12-0[7m7[27mT16:30:00+07:00"[39m
+    Timeout:  7000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 7000ms[22m
+    [2m  - waiting for getByTestId('sla-due')[22m
+    [2m    11 × locator resolved to <time data-testid="sla-due" data-iso="2026-12-07T16:30:00+07:00" datetime="2026-12-07T16:30:00+07:00">7 ธ.ค. 2569 16:30</time>[22m
+    [2m       - unexpected value "2026-12-07T16:30:00+07:00"[22m
+
+
+      31 | /** ตรวจ sla-due (ข้อความ + data-iso) บนหน้าคำขอที่เปิดอยู่ */
+      32 | async function expectSlaDue(page: Page, iso: string, text: string) {
+    > 33 |   await expect(page.getByTestId('sla-due')).toHaveAttribute('data-iso', iso);
+         |                                             ^
+      34 |   await expect(page.getByTestId('sla-due')).toHaveText(text);
+      35 | }
+      36 |
+        at expectSlaDue (/t/e2e/part1/sla.spec.ts:33:45)
+        at /t/e2e/part1/sla.spec.ts:101:11
+        at /t/e2e/part1/sla.spec.ts:86:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › e2e/part1/sla.spec.ts:157:5 › TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด › ส่วน B: seed …000016 (ปิติ) กำหนด อ.8 ธ.ค. 16:30 › 2026-12-04T09:00:00+07:00 → ใกล้ครบกำหนด 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  getByTestId('sla-level')
+    Expected: [32m"ใกล้ครบกำหนด"[39m
+    Received: [31m"ปกติ"[39m
+    Timeout:  7000ms
+
+    Call log:
+    [2m  - Expect "toHaveText" with timeout 7000ms[22m
+    [2m  - waiting for getByTestId('sla-level')[22m
+    [2m    11 × locator resolved to <span data-level="normal" data-testid="sla-level" class="badge lv-normal">ปกติ</span>[22m
+    [2m       - unexpected value "ปกติ"[22m
+
+
+      37 | /** ตรวจ sla-level (ข้อความ + data-level) บนหน้าคำขอที่เปิดอยู่ */
+      38 | async function expectSlaLevel(page: Page, th: string) {
+    > 39 |   await expect(page.getByTestId('sla-level')).toHaveText(th);
+         |                                               ^
+      40 |   await expect(page.getByTestId('sla-level')).toHaveAttribute('data-level', LEVEL_CODE[th]);
+      41 | }
+      42 |
+        at expectSlaLevel (/t/e2e/part1/sla.spec.ts:39:47)
+        at levelAt (/t/e2e/part1/sla.spec.ts:165:11)
+        at /t/e2e/part1/sla.spec.ts:193:37
+        at /t/e2e/part1/sla.spec.ts:185:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-7.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #8: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-8.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #9: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-9.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: screenshot (image/png) ─────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/test-failed-10.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/error-context.md
+
+    attachment #12: trace (application/zip) ────────────────────────────────────────────────────────
+    test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › e2e/part2/rbac.spec.ts:235:5 › TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก › 7 หลังเพิ่มวันหยุด NEW_PAID SV-01 (฿25) → …000033 · dueAt 8 ธ.ค. 16:30 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"2026-12-0[7m8[27mT16:30:00+07:00"[39m
+    Received: [31m"2026-12-0[7m4[27mT16:30:00+07:00"[39m
+
+      305 |     const r = await lab.newPaid({ service: 'SV-01', at: T0, qty: 1, expectFee: 25 });
+      306 |     expect(r.caseNo).toBe(cn(33));
+    > 307 |     expect((await getCase(r.citizen, r.caseNo)).dueAt).toBe('2026-12-08T16:30:00+07:00');
+          |                                                        ^
+      308 |   });
+      309 |
+      310 |   let exec!: Actor;
+        at /t/e2e/part2/rbac.spec.ts:307:56
+        at /t/e2e/part2/rbac.spec.ts:304:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part2-rbac-TC-RBAC-04-·-ผู-25a2f-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part2-rbac-TC-RBAC-04-·-ผู-25a2f-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part2-rbac-TC-RBAC-04-·-ผู-25a2f-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/part2-rbac-TC-RBAC-04-·-ผู-25a2f-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/part2-rbac-TC-RBAC-04-·-ผู-25a2f-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/part2-rbac-TC-RBAC-04-·-ผู-25a2f-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › e2e/part1/noti.spec.ts:67:5 › TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร 
+    [chromium] › e2e/part1/sla.spec.ts:43:5 › TC-SLA-01 · กำหนดเสร็จตามตารางวันที่ ─────────────────
+    [chromium] › e2e/part1/sla.spec.ts:69:5 › TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข ───────────────
+    [chromium] › e2e/part1/sla.spec.ts:157:5 › TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด 
+    [chromium] › e2e/part2/rbac.spec.ts:235:5 › TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก 
+  46 passed (1.7m)
+
+To open last HTML report run:
+
+  npx playwright show-report
+
+npm notice
+npm notice New major version of npm available! 10.9.3 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

@@ -19,3 +19,5 @@
 {"block":"B07","event":"start","at":"2026-11-23T12:44:52+07:00"}
 {"block":"B07","event":"end","at":"2026-11-23T13:09:17+07:00","note":"51/51 x2 consecutive (normal-4, normal-5); earlier runs normal-1..3 had failures, all test-side"}
 {"block":"B08","event":"start","at":"2026-11-23T13:09:17+07:00"}
+{"block":"B08","event":"end","at":"2026-11-23T13:40:25+07:00","note":"14 runs (B01-B12 + 2 combos) exit 0"}
+{"block":"B09","event":"start","at":"2026-11-23T13:40:25+07:00"}

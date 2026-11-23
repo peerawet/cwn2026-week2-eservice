@@ -1,0 +1,58 @@
+ Image egov-eservice:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 594B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 721B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:22-bookworm-slim
+#3 DONE 2.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 151B 0.0s done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee
+#5 resolve docker.io/library/node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 2.20kB 0.2s done
+#6 DONE 0.2s
+
+#7 [3/6] COPY package.json package-lock.json ./
+#7 CACHED
+
+#8 [4/6] RUN npm ci --omit=dev --no-audit --no-fund && npm cache clean --force
+#8 CACHED
+
+#9 [5/6] COPY src ./src
+#9 CACHED
+
+#10 [2/6] WORKDIR /app
+#10 CACHED
+
+#11 [6/6] RUN mkdir -p /data
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:f3c422e6627092df3f4bb8c57345ce4cd19a13a151c75c4a05f1baa03dddefaa done
+#12 exporting config sha256:7617505b4c895f5a5f8818fbe4c4c11ce69941f667b62f7720e4ac5d6c053a48 done
+#12 exporting attestation manifest sha256:0114009de02f87dd780ad08c218afe7b390a14c23ad7401b2f112408f2b09740 0.0s done
+#12 exporting manifest list sha256:22715db4d0fcd9e062892c9353198cf7febdd3f94fcc6f1b2e0fd244dad5951a 0.0s done
+#12 naming to docker.io/library/egov-eservice:local done
+#12 unpacking to docker.io/library/egov-eservice:local done
+#12 DONE 0.1s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image egov-eservice:local Built 
+ Network app_default Creating 
+ Network app_default Created 
+ Container app-web-1 Creating 
+ Container app-web-1 Created 
+ Container app-web-1 Starting 
+ Container app-web-1 Started 

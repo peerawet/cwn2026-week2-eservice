@@ -1,0 +1,99 @@
+
+Running 51 tests using 1 worker
+
+  ✓   1 [chromium] › e2e/part1/auth.spec.ts:19:5 › TC-AUTH-01 · เลขบัตร 13 หลัก + checksum (2.2s)
+  ✓   2 [chromium] › e2e/part1/auth.spec.ts:60:5 › TC-AUTH-02 · OTP ผิด 3 ครั้งล็อก 15 นาที (1.6s)
+  ✓   3 [chromium] › e2e/part1/auth.spec.ts:161:5 › TC-AUTH-03 · ลงทะเบียนครั้งแรก (1.5s)
+  ✓   4 [chromium] › e2e/part1/auth.spec.ts:248:5 › TC-AUTH-04 · เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น (2.9s)
+  ✓   5 [chromium] › e2e/part1/fee.spec.ts:39:5 › TC-FEE-01 · ค่าธรรมเนียม SV-01 / SV-02 / SV-03 (1.1s)
+  ✓   6 [chromium] › e2e/part1/noti.spec.ts:62:5 › TC-NOTI-01 · ผู้รับแจ้งเตือนตามระดับ (798ms)
+  ✓   7 [chromium] › e2e/part1/noti.spec.ts:67:5 › TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร (2.4s)
+  ✓   8 [chromium] › e2e/part1/pay.spec.ts:18:5 › TC-PAY-01 · อายุ QR 15:00 (559ms)
+  ✓   9 [chromium] › e2e/part1/pay.spec.ts:67:5 › TC-PAY-02 · ยอดเงินและ callback ซ้ำ (241ms)
+  ✓  10 [chromium] › e2e/part1/pay.spec.ts:99:5 › TC-PAY-03 · ชำระพร้อมกัน เลขไม่ซ้ำ (628ms)
+  ✓  11 [chromium] › e2e/part1/pay.spec.ts:138:5 › TC-PAY-04 · เลขคำขอข้ามปี (1.1s)
+  ✓  12 [chromium] › e2e/part1/queue.spec.ts:30:5 › TC-QUEUE-01 · ลำดับคิวและขอบเขตแผนก (1.1s)
+  ✓  13 [chromium] › e2e/part1/queue.spec.ts:108:5 › TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน) (1.3s)
+  ✓  14 [chromium] › e2e/part1/queue.spec.ts:171:5 › TC-QUEUE-03 · งานในมือสูงสุด 10 (2.6s)
+  ✓  15 [chromium] › e2e/part1/sla.spec.ts:43:5 › TC-SLA-01 · กำหนดเสร็จตามตารางวันที่ (2.6s)
+  ✓  16 [chromium] › e2e/part1/sla.spec.ts:69:5 › TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข (2.3s)
+  ✓  17 [chromium] › e2e/part1/sla.spec.ts:157:5 › TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด (3.1s)
+  ✓  18 [chromium] › e2e/part1/submit.spec.ts:22:5 › TC-SUBMIT-01 · ยื่นคำขอ SV-01 ครบวงจร (1.3s)
+  ✓  19 [chromium] › e2e/part1/submit.spec.ts:98:5 › TC-SUBMIT-02 · เอกสารบังคับครบก่อนชำระ (1.5s)
+  ✓  20 [chromium] › e2e/part1/submit.spec.ts:160:5 › TC-SUBMIT-03 · ร่าง และการยกเลิก (2.1s)
+  ✓  21 [chromium] › e2e/part1/upload.spec.ts:19:5 › TC-UPLOAD-01 · ขนาดและจำนวนไฟล์ (5.1s)
+  ✓  22 [chromium] › e2e/part1/upload.spec.ts:98:5 › TC-UPLOAD-02 · ชนิดไฟล์จากเนื้อไฟล์ (2.2s)
+  ✓  23 [chromium] › e2e/part2/audit.spec.ts:44:5 › TC-AUDIT-01 · เหตุการณ์และฟิลด์ใน Audit (1.2s)
+  ✓  24 [chromium] › e2e/part2/audit.spec.ts:169:5 › TC-AUDIT-02 · Audit แก้/ลบไม่ได้ (405) (488ms)
+  ✓  25 [chromium] › e2e/part2/audit.spec.ts:208:5 › TC-AUDIT-03 · กรองช่วงวันที่ตามเวลาไทย (1.2s)
+  ✓  26 [chromium] › e2e/part2/dash.spec.ts:51:5 › TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น (515ms)
+  ✓  27 [chromium] › e2e/part2/dash.spec.ts:98:5 › TC-DASH-02 · Dashboard ย้อนหลัง (1.0s)
+  ✓  28 [chromium] › e2e/part2/dash.spec.ts:121:5 › TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ (884ms)
+  ✓  29 [chromium] › e2e/part2/dash.spec.ts:189:5 › TC-DASH-04 · ค่าขอบ "ทันกำหนด" 16:29:59 / 16:30:00 / 16:30:01 (801ms)
+  ✓  30 [chromium] › e2e/part2/doc.spec.ts:30:5 › TC-DOC-01 · ออกเอกสารและข้อมูลในเอกสาร (804ms)
+  ✓  31 [chromium] › e2e/part2/doc.spec.ts:93:5 › TC-DOC-02 · ตรวจเอกสาร /verify (282ms)
+  ✓  32 [chromium] › e2e/part2/doc.spec.ts:132:5 › TC-DOC-03 · เอกสารหมดอายุและลายเซ็นไม่ตรง (1.9s)
+  ✓  33 [chromium] › e2e/part2/nfr.spec.ts:48:5 › TC-NFR-01 · Responsive 375 / 768 / 1280 (4.1s)
+  ✓  34 [chromium] › e2e/part2/nfr.spec.ts:185:5 › TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว (7.7s)
+  ✓  35 [chromium] › e2e/part2/nfr.spec.ts:291:5 › TC-NFR-03 · Health เวลาโหลด และผลซ้ำได้ (1.7s)
+  ✓  36 [chromium] › e2e/part2/nfr.spec.ts:385:5 › TC-NFR-04 · เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection) (202ms)
+  ✓  37 [chromium] › e2e/part2/pdpa.spec.ts:24:5 › TC-PDPA-01 · ปิดบังเลขบัตรบนจอ (825ms)
+  ✘  38 [chromium] › e2e/part2/pdpa.spec.ts:66:5 › TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม (142ms)
+  ✓  39 [chromium] › e2e/part2/pdpa.spec.ts:111:5 › TC-PDPA-03 · แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit (1.5s)
+  ✓  40 [chromium] › e2e/part2/rbac.spec.ts:27:5 › TC-RBAC-01 · ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) (368ms)
+  ✓  41 [chromium] › e2e/part2/rbac.spec.ts:64:5 › TC-RBAC-02 · เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) (687ms)
+  ✓  42 [chromium] › e2e/part2/rbac.spec.ts:173:5 › TC-RBAC-03 · ตารางสิทธิ์หน้า/API ตามบทบาท (5.5s)
+  ✓  43 [chromium] › e2e/part2/rbac.spec.ts:235:5 › TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก (2.3s)
+  ✓  44 [chromium] › e2e/part2/rbac.spec.ts:359:5 › TC-RBAC-05 · สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ (1.4s)
+  ✓  45 [chromium] › e2e/part2/rbac.spec.ts:431:5 › TC-RBAC-06 · ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ (2.0s)
+  ✓  46 [chromium] › e2e/part2/workflow.spec.ts:40:5 › TC-WORKFLOW-01 · SV-01 อนุมัติ + ออกเอกสาร (907ms)
+  ✓  47 [chromium] › e2e/part2/workflow.spec.ts:102:5 › TC-WORKFLOW-02 · SV-02 ผ่านหัวหน้า (1.9s)
+  ✓  48 [chromium] › e2e/part2/workflow.spec.ts:175:5 › TC-WORKFLOW-03 · SV-03 สามขั้นตอน (1.8s)
+  ✓  49 [chromium] › e2e/part2/workflow.spec.ts:250:5 › TC-WORKFLOW-04 · ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ (2.1s)
+  ✓  50 [chromium] › e2e/part2/workflow.spec.ts:348:5 › TC-WORKFLOW-05 · เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ) (2.0s)
+  ✓  51 [chromium] › e2e/part2/workflow.spec.ts:421:5 › TC-WORKFLOW-06 · เวลาแก้ไข 168 ชั่วโมง (904ms)
+
+
+  1) [chromium] › e2e/part2/pdpa.spec.ts:66:5 › TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม › off.reg1: ตรวจ JSON ทั้งก้อนของ API เจ้าหน้าที่ 
+
+    Error: off.reg1 GET /api/officer/queue?filter=all พบเลข 13 หลัก
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBeNull[2m()[22m
+
+    Received: [31m"1101700123456"[39m
+
+      91 |           typeof v === 'number' && Number.isInteger(v) && Math.abs(v) >= 1e12 && Math.abs(v) < 1e13 ? '<epoch-ms>' : v,
+      92 |         );
+    > 93 |         expect(noEpoch.match(/\d{13}/)?.[0] ?? null, `${label} พบเลข 13 หลัก`).toBeNull();
+         |                                                                                ^
+      94 |         expect(whole.match(/\d-\d{4}-\d{5}-\d{2}-\d/)?.[0] ?? null, `${label} พบเลขบัตรรูปแบบมีขีด`).toBeNull();
+      95 |         expect(hasKeyDeep(body, 'idNo'), `${label} มี key idNo`).toBe(false);
+      96 |         for (const s of ['3100600987659', '1101700123456', '1909900555015']) {
+        at /t/e2e/part2/pdpa.spec.ts:93:80
+        at /t/e2e/part2/pdpa.spec.ts:77:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/part2-pdpa-TC-PDPA-02-·-API-JSON-ไม่ส่งเลขบัตรเต็ม-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/part2-pdpa-TC-PDPA-02-·-API-JSON-ไม่ส่งเลขบัตรเต็ม-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/part2-pdpa-TC-PDPA-02-·-API-JSON-ไม่ส่งเลขบัตรเต็ม-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › e2e/part2/pdpa.spec.ts:66:5 › TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม ───────────
+  50 passed (1.5m)
+
+To open last HTML report run:
+
+  npx playwright show-report
+
+npm notice
+npm notice New major version of npm available! 10.9.3 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

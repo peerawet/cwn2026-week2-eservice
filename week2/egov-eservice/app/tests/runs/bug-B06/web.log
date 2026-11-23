@@ -1,0 +1,2 @@
+web-1  | [egov] http://localhost:3000 · TEST_MODE=1 · BUG_MODE=B06 → เปิด [B06]
+web-1  | [egov] DB_PATH=/data/egov.db · นาฬิกา=2026-12-01T09:00:00+07:00 (แช่แข็ง) · โมดูล=[citizen, workflow, mgmt]

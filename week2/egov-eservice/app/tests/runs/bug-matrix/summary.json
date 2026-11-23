@@ -1,0 +1,375 @@
+[
+  {
+    "combo": "B01",
+    "total": 51,
+    "failed": [
+      "TC-FEE-01"
+    ],
+    "mustFail": [
+      "TC-FEE-01"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-FEE-01"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-FEE-01": "Error: SV-03 areaSqm=101 ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('fee-total')"
+    },
+    "seconds": 129
+  },
+  {
+    "combo": "B02",
+    "total": 51,
+    "failed": [
+      "TC-UPLOAD-01"
+    ],
+    "mustFail": [
+      "TC-UPLOAD-01"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-UPLOAD-01"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-UPLOAD-01": "Error: expect(locator).toHaveCount(expected) failed ⏎ Locator:  getByTestId('file-item') ⏎ Expected: 1"
+    },
+    "seconds": 119
+  },
+  {
+    "combo": "B03",
+    "total": 51,
+    "failed": [
+      "TC-NOTI-02",
+      "TC-RBAC-04",
+      "TC-SLA-01",
+      "TC-SLA-02",
+      "TC-SLA-03"
+    ],
+    "mustFail": [
+      "TC-SLA-01",
+      "TC-SLA-02"
+    ],
+    "mayFail": [
+      "TC-SLA-03",
+      "TC-RBAC-04"
+    ],
+    "expectedFailed": [
+      "TC-SLA-01",
+      "TC-SLA-02"
+    ],
+    "missed": [],
+    "allowedExtra": [
+      "TC-SLA-03",
+      "TC-RBAC-04"
+    ],
+    "unexpected": [
+      "TC-NOTI-02"
+    ],
+    "verdict": "CHECK",
+    "messages": {
+      "TC-NOTI-02": "Error: bell-count off.reg2 ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('bell-count')",
+      "TC-SLA-01": "Error: dueAt แถว c ⏎ expect(received).toBe(expected) // Object.is equality ⏎ Expected: \"2026-12-08T16:30:00+07:00\"",
+      "TC-SLA-02": "Error: expect(locator).toHaveAttribute(expected) failed ⏎ Locator:  getByTestId('sla-due') ⏎ Expected: \"2026-12-08T16:30:00+07:00\"",
+      "TC-SLA-03": "Error: expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('sla-level') ⏎ Expected: \"ใกล้ครบกำหนด\"",
+      "TC-RBAC-04": "Error: expect(received).toBe(expected) // Object.is equality ⏎ Expected: \"2026-12-08T16:30:00+07:00\" ⏎ Received: \"2026-12-04T16:30:00+07:00\""
+    },
+    "seconds": 134
+  },
+  {
+    "combo": "B04",
+    "total": 51,
+    "failed": [
+      "TC-SLA-02"
+    ],
+    "mustFail": [
+      "TC-SLA-02"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-SLA-02"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-SLA-02": "Error: expect(locator).toHaveAttribute(expected) failed ⏎ Locator:  getByTestId('sla-due') ⏎ Expected: \"2026-12-08T16:30:00+07:00\""
+    },
+    "seconds": 115
+  },
+  {
+    "combo": "B05",
+    "total": 51,
+    "failed": [
+      "TC-PAY-01"
+    ],
+    "mustFail": [
+      "TC-PAY-01"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-PAY-01"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-PAY-01": "Error: http://localhost:3000/api/test/payments/PP-0001/pay → 200 {\"status\":\"PAID\",\"caseNo\":\"EG-2569-000031\",\"receiptNo\":\"RC-2569-000031\",\"duplicate\":false} ⏎ expect(received).toBe(expected) // Object.is equality ⏎ Expected: 410"
+    },
+    "seconds": 110
+  },
+  {
+    "combo": "B06",
+    "total": 51,
+    "failed": [
+      "TC-RBAC-01"
+    ],
+    "mustFail": [
+      "TC-RBAC-01"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-RBAC-01"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-RBAC-01": "Error: expect(received).toBe(expected) // Object.is equality ⏎ Expected: 404 ⏎ Received: 200"
+    },
+    "seconds": 126
+  },
+  {
+    "combo": "B07",
+    "total": 51,
+    "failed": [
+      "TC-RBAC-02"
+    ],
+    "mustFail": [
+      "TC-RBAC-02"
+    ],
+    "mayFail": [
+      "TC-WORKFLOW-01"
+    ],
+    "expectedFailed": [
+      "TC-RBAC-02"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-RBAC-02": "Error: off.reg2 approve …000014 [http://localhost:3000/api/cases/EG-2569-000014/approve] → HTTP 200 {\"status\":\"APPROVED\"} ⏎ expect(received).toBe(expected) // Object.is equality ⏎ Expected: 403"
+    },
+    "seconds": 111
+  },
+  {
+    "combo": "B08",
+    "total": 51,
+    "failed": [
+      "TC-QUEUE-02"
+    ],
+    "mustFail": [
+      "TC-QUEUE-02"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-QUEUE-02"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-QUEUE-02": "Error: expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('action-error') ⏎ Expected: \"มีเจ้าหน้าที่รับเรื่องนี้แล้ว\""
+    },
+    "seconds": 118
+  },
+  {
+    "combo": "B09",
+    "total": 51,
+    "failed": [
+      "TC-PDPA-02"
+    ],
+    "mustFail": [
+      "TC-PDPA-02"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-PDPA-02"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-PDPA-02": "Error: off.reg1 GET /api/officer/queue?filter=all พบเลข 13 หลัก ⏎ expect(received).toBeNull() ⏎ Received: \"1101700123456\""
+    },
+    "seconds": 117
+  },
+  {
+    "combo": "B10",
+    "total": 51,
+    "failed": [
+      "TC-DASH-01",
+      "TC-DASH-02",
+      "TC-DASH-03"
+    ],
+    "mustFail": [
+      "TC-DASH-02"
+    ],
+    "mayFail": [
+      "TC-DASH-01",
+      "TC-DASH-03"
+    ],
+    "expectedFailed": [
+      "TC-DASH-02"
+    ],
+    "missed": [],
+    "allowedExtra": [
+      "TC-DASH-01",
+      "TC-DASH-03"
+    ],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-DASH-01": "Error: ธ.ค. ALL kpi-ontime-pct ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('kpi-ontime-pct')",
+      "TC-DASH-02": "Error: 2026-11 ALL kpi-ontime-pct ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('kpi-ontime-pct')",
+      "TC-DASH-03": "Error:  kpi-ontime-pct ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('kpi-ontime-pct')"
+    },
+    "seconds": 148
+  },
+  {
+    "combo": "B11",
+    "total": 51,
+    "failed": [
+      "TC-AUDIT-01",
+      "TC-PDPA-03"
+    ],
+    "mustFail": [
+      "TC-PDPA-03",
+      "TC-AUDIT-01"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-PDPA-03",
+      "TC-AUDIT-01"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-AUDIT-01": "Error: expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('audit-count') ⏎ Expected: \"16\"",
+      "TC-PDPA-03": "Error: UNMASK audit-count ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('audit-count')"
+    },
+    "seconds": 132
+  },
+  {
+    "combo": "B12",
+    "total": 51,
+    "failed": [
+      "TC-WORKFLOW-04"
+    ],
+    "mustFail": [
+      "TC-WORKFLOW-04"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-WORKFLOW-04"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-WORKFLOW-04": "Error: expect(locator).toHaveCount(expected) failed ⏎ Locator:  getByTestId('return-btn') ⏎ Expected: 0"
+    },
+    "seconds": 124
+  },
+  {
+    "combo": "B03,B07",
+    "total": 51,
+    "failed": [
+      "TC-NOTI-02",
+      "TC-RBAC-02",
+      "TC-RBAC-04",
+      "TC-SLA-01",
+      "TC-SLA-02",
+      "TC-SLA-03"
+    ],
+    "mustFail": [
+      "TC-SLA-01",
+      "TC-SLA-02",
+      "TC-RBAC-02"
+    ],
+    "mayFail": [
+      "TC-SLA-03",
+      "TC-RBAC-04",
+      "TC-WORKFLOW-01"
+    ],
+    "expectedFailed": [
+      "TC-SLA-01",
+      "TC-SLA-02",
+      "TC-RBAC-02"
+    ],
+    "missed": [],
+    "allowedExtra": [
+      "TC-SLA-03",
+      "TC-RBAC-04"
+    ],
+    "unexpected": [
+      "TC-NOTI-02"
+    ],
+    "verdict": "CHECK",
+    "messages": {
+      "TC-NOTI-02": "Error: bell-count off.reg2 ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('bell-count')",
+      "TC-SLA-01": "Error: dueAt แถว c ⏎ expect(received).toBe(expected) // Object.is equality ⏎ Expected: \"2026-12-08T16:30:00+07:00\"",
+      "TC-SLA-02": "Error: expect(locator).toHaveAttribute(expected) failed ⏎ Locator:  getByTestId('sla-due') ⏎ Expected: \"2026-12-08T16:30:00+07:00\"",
+      "TC-SLA-03": "Error: expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('sla-level') ⏎ Expected: \"ใกล้ครบกำหนด\"",
+      "TC-RBAC-02": "Error: off.reg2 approve …000014 [http://localhost:3000/api/cases/EG-2569-000014/approve] → HTTP 200 {\"status\":\"APPROVED\"} ⏎ expect(received).toBe(expected) // Object.is equality ⏎ Expected: 403",
+      "TC-RBAC-04": "Error: expect(received).toBe(expected) // Object.is equality ⏎ Expected: \"2026-12-08T16:30:00+07:00\" ⏎ Received: \"2026-12-04T16:30:00+07:00\""
+    },
+    "seconds": 170
+  },
+  {
+    "combo": "B01,B05,B09",
+    "total": 51,
+    "failed": [
+      "TC-FEE-01",
+      "TC-PAY-01",
+      "TC-PDPA-02"
+    ],
+    "mustFail": [
+      "TC-FEE-01",
+      "TC-PAY-01",
+      "TC-PDPA-02"
+    ],
+    "mayFail": [],
+    "expectedFailed": [
+      "TC-FEE-01",
+      "TC-PAY-01",
+      "TC-PDPA-02"
+    ],
+    "missed": [],
+    "allowedExtra": [],
+    "unexpected": [],
+    "verdict": "OK",
+    "messages": {
+      "TC-FEE-01": "Error: SV-03 areaSqm=101 ⏎ expect(locator).toHaveText(expected) failed ⏎ Locator:  getByTestId('fee-total')",
+      "TC-PAY-01": "Error: http://localhost:3000/api/test/payments/PP-0001/pay → 200 {\"status\":\"PAID\",\"caseNo\":\"EG-2569-000031\",\"receiptNo\":\"RC-2569-000031\",\"duplicate\":false} ⏎ expect(received).toBe(expected) // Object.is equality ⏎ Expected: 410",
+      "TC-PDPA-02": "Error: off.reg1 GET /api/officer/queue?filter=all พบเลข 13 หลัก ⏎ expect(received).toBeNull() ⏎ Received: \"1101700123456\""
+    },
+    "seconds": 165
+  }
+]
