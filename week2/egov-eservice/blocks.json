@@ -1,110 +1,102 @@
 {
-  "plan": "egov-eservice",
-  "created_at": "2026-11-23",
-  "max_agents": 4,
-  "runner": "Claude Code orchestrator + Agent subagents (ไม่มี container multi-account / สกิล dag-planner ในเครื่อง — ใช้ subagent ของ Claude Code แทน)",
-  "stack": "Node 22 · Express 4 · node:sqlite · server-rendered HTML · Docker Compose (WSL docker) · Playwright 1.56.1",
-  "blocks": [
-    {
-      "id": "B01",
-      "name": "โครงโปรเจกต์ + DB schema + seed + clock + test hook + BUG_MODE flag + Docker",
-      "agent": "agent-core",
-      "difficulty": "hard",
-      "deps": [],
-      "est_min": 35,
-      "reads": ["README.md", "CONTRACT.md §0 §1 §2.1 §3 §4 §6.6 §8", "TEST-DATA.md", "REQUIREMENTS.md (data model, NFR)", "DECISIONS.md"],
-      "output": ["app/package.json", "app/Dockerfile", "app/docker-compose.yml", "app/src/server.js", "app/src/core/*", "app/src/seed.js", "app/INTERFACES.md"],
-      "done": "docker compose up → /api/health 200 · POST /api/test/reset คืน now=2026-12-01T09:00:00+07:00 · seed ครบตาม TEST-DATA · ไม่ตั้ง TEST_MODE → /api/test/* 404"
-    },
-    {
-      "id": "B02",
-      "name": "ประชาชน: ThaiD/OTP/ลงทะเบียน · SSO เจ้าหน้าที่ · ยื่นคำขอ/ร่าง · อัปโหลด · ค่าธรรมเนียม · QR ชำระ · เลขคำขอ · API คำขอ (PDPA mask) · ไฟล์แนบ",
-      "agent": "agent-citizen",
-      "difficulty": "hard",
-      "deps": ["B01"],
-      "est_min": 50,
-      "reads": ["CONTRACT.md §2.2–2.6 §5 §6.1 §6.2 §6.7", "REQUIREMENTS.md (AUTH FEE SUBMIT UPLOAD PAY PDPA)", "TEST-DATA.md", "BUGS.md B01 B02 B05 B06 B09"],
-      "output": ["app/src/modules/citizen/*", "app/src/views/citizen/*"],
-      "done": "ล็อกอิน/ลงทะเบียน/ยื่น SV-01..03 จนชำระสำเร็จด้วย curl · บั๊ก B01 B02 B05 B06 B09 เปิดปิดได้"
-    },
-    {
-      "id": "B03",
-      "name": "เจ้าหน้าที่/หัวหน้า: คิว · รับเรื่อง (ซ้อน/สูงสุด 10) · ตีกลับ/ไม่อนุมัติ/อนุมัติ · 168 ชม. · ยกเลิกอัตโนมัติ · SLA วันทำการ · ระดับเตือน · แจ้งเตือน",
-      "agent": "agent-workflow",
-      "difficulty": "hard",
-      "deps": ["B01"],
-      "est_min": 55,
-      "reads": ["CONTRACT.md §2.6–2.8 §2.12 §4 §5 §6.3", "REQUIREMENTS.md (QUEUE SLA NOTI WORKFLOW)", "TEST-DATA.md", "BUGS.md B03 B04 B07 B08 B12"],
-      "output": ["app/src/modules/workflow/*", "app/src/views/officer/*"],
-      "done": "เดิน SV-01/02/03 ครบวงจรด้วย curl · dueAt ตรงตาราง TC-SLA-01 · บั๊ก B03 B04 B07 B08 B12 เปิดปิดได้",
-      "review": "กฎตัวเลข SLA วันทำการ → ให้ B07 ตรวจซ้ำด้วยชุด Playwright"
-    },
-    {
-      "id": "B04",
-      "name": "เอกสารดิจิทัล + /verify + tamper · Dashboard + ส่งออก xlsx/pdf · Audit + csv + 405 · Admin บริการ/วันหยุด/ผู้ใช้ · PDPA แสดงเลขเต็ม",
-      "agent": "agent-mgmt",
-      "difficulty": "hard",
-      "deps": ["B01"],
-      "est_min": 50,
-      "reads": ["CONTRACT.md §2.9–2.11 §2.13 §5 §6.4 §6.5 §6.8 §7", "REQUIREMENTS.md (DOC DASH AUDIT ADMIN PDPA)", "TEST-DATA.md", "BUGS.md B10 B11"],
-      "output": ["app/src/modules/mgmt/*", "app/src/views/mgmt/*"],
-      "done": "ตัวเลข Dashboard เริ่มต้นตรง TC-DASH-01 · ส่งออกได้ · /verify 3 กรณี · บั๊ก B10 B11 เปิดปิดได้",
-      "review": "กฎตัวเลข Dashboard → ให้ B07 ตรวจซ้ำด้วยชุด Playwright"
-    },
-    {
-      "id": "T1",
-      "name": "Playwright ส่วนที่ 1: AUTH FEE SUBMIT UPLOAD PAY QUEUE SLA NOTI",
-      "agent": "agent-test-1",
-      "difficulty": "medium",
-      "deps": [],
-      "est_min": 45,
-      "reads": ["TEST-PLAN.md", "CONTRACT.md", "TEST-DATA.md (ห้ามอ่านโค้ดเว็บ)"],
-      "output": ["app/tests/e2e/part1/*"],
-      "done": "ทุก TC ในหมวดมี test ชื่อขึ้นต้นด้วยรหัส TC · playwright test --list ผ่าน"
-    },
-    {
-      "id": "T2",
-      "name": "Playwright ส่วนที่ 2: WORKFLOW DOC PDPA DASH AUDIT RBAC NFR",
-      "agent": "agent-test-2",
-      "difficulty": "medium",
-      "deps": [],
-      "est_min": 45,
-      "reads": ["TEST-PLAN.md", "CONTRACT.md", "TEST-DATA.md (ห้ามอ่านโค้ดเว็บ)"],
-      "output": ["app/tests/e2e/part2/*"],
-      "done": "ทุก TC ในหมวดมี test ชื่อขึ้นต้นด้วยรหัส TC · playwright test --list ผ่าน"
-    },
-    {
-      "id": "B07",
-      "name": "🔒 รวม + รัน Playwright ชุดเต็มใน WSL docker จนผ่าน 51/51 + test-report + GIF ของ P1",
-      "agent": "orchestrator (+ subagent แก้จุดที่ล้ม)",
-      "difficulty": "hard",
-      "deps": ["B02", "B03", "B04", "T1", "T2"],
-      "est_min": 40,
-      "reads": ["TEST-PLAN.md", "CONTRACT.md", "DECISIONS.md"],
-      "output": ["test-report/*", "app/TEST-RESULT.md"],
-      "done": "51/51 ผ่าน (exclusive: เว็บเดียว ทีละ TC)"
-    },
-    {
-      "id": "B08",
-      "name": "🔒 BUG_MODE B01–B12 ทีละตัว + triage",
-      "agent": "orchestrator",
-      "difficulty": "medium",
-      "deps": ["B07"],
-      "est_min": 30,
-      "reads": ["BUGS.md"],
-      "output": ["BUG-HUNT.md", "test-report/bug-matrix/*"],
-      "done": "12/12 บั๊กถูกจับด้วย TC ที่ BUGS.md ระบุ"
-    },
-    {
-      "id": "B09",
-      "name": "รายงาน: gantt-actual · compare · REPORT.md · README",
-      "agent": "orchestrator",
-      "difficulty": "easy",
-      "deps": ["B08"],
-      "est_min": 15,
-      "reads": ["timing/events.jsonl"],
-      "output": ["gantt-actual.png", "compare.png", "REPORT.md", "README.md"],
-      "done": "ตัวเลขทุกตัวมาจาก timing/events.jsonl และผลรันจริง"
-    }
-  ]
+ "goal": "สร้างเว็บ e-Service กลางตามชุดโจทย์ใน egov-brief (อ่าน README.md ก่อน) ต้องทำตาม REQUIREMENTS.md CONTRACT.md TEST-DATA.md DECISIONS.md ครบทุกข้อ รันด้วย Docker Compose คำสั่งเดียว รองรับ TEST_MODE=1 และ BUG_MODE ตาม BUGS.md และมีชุด Playwright ครบทุก TC ใน TEST-PLAN.md",
+ "name": "egov-eservice",
+ "blocks": [
+  {
+   "id": "B01",
+   "title": "โครงโปรเจกต์ + docker compose + DB schema + seed + clock + test hook (reset · clock) + BUG_MODE flag",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "INTERFACES.md",
+   "done": "docker compose up → /api/health 200 · POST /api/test/reset คืน now=2026-12-01T09:00:00+07:00 · seed ครบตาม TEST-DATA · ไม่ตั้ง TEST_MODE → /api/test/* 404",
+   "detail": "อ่าน CONTRACT §0 §1 §2.1 §3 §4 §6.6 §8 · TEST-DATA · REQUIREMENTS · DECISIONS · เขียน src/core/* src/seed.js package.json Dockerfile docker-compose.yml และ INTERFACES.md ให้โมดูลอื่นใช้",
+   "agent": "agent-core"
+  },
+  {
+   "id": "B02",
+   "title": "ประชาชน: ThaiD/OTP/ลงทะเบียน · SSO เจ้าหน้าที่ · ยื่นคำขอ/ร่าง · อัปโหลด · ค่าธรรมเนียม · QR ชำระ · API คำขอ (PDPA mask)",
+   "size": "L",
+   "depends_on": ["B01"],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "src/modules/citizen/",
+   "done": "ล็อกอิน/ลงทะเบียน/ยื่น SV-01..03 จนชำระสำเร็จ ตรวจด้วย curl · BUG_MODE B01 B02 B05 B06 B09 เปิดปิดได้",
+   "detail": "อ่าน CONTRACT §2.2–2.6 §5 §6.1 §6.2 §6.7 · REQUIREMENTS (AUTH FEE SUBMIT UPLOAD PAY PDPA) · TEST-DATA · BUGS B01 B02 B05 B06 B09",
+   "agent": "agent-citizen"
+  },
+  {
+   "id": "B03",
+   "title": "เจ้าหน้าที่/หัวหน้า: คิว · รับเรื่อง · ตีกลับ/ไม่อนุมัติ/อนุมัติ · 168 ชม. · ยกเลิกอัตโนมัติ · SLA วันทำการ · ระดับเตือน · แจ้งเตือน",
+   "size": "L",
+   "depends_on": ["B01"],
+   "skill": "yolo",
+   "difficulty": 5,
+   "output": "src/modules/workflow/",
+   "done": "เดิน SV-01/02/03 ครบวงจรด้วย curl · dueAt ตรงตาราง TC-SLA-01 · BUG_MODE B03 B04 B07 B08 B12 เปิดปิดได้",
+   "detail": "อ่าน CONTRACT §2.6–2.8 §2.12 §4 §5 §6.3 · REQUIREMENTS (QUEUE SLA NOTI WORKFLOW) · TEST-DATA · BUGS B03 B04 B07 B08 B12 · กฎตัวเลขเยอะ: ไม่มีบัญชี Codex ไว้ review จึงให้ชุด Playwright ของ T1/T2 เป็นตัวตรวจใน B07",
+   "agent": "agent-workflow"
+  },
+  {
+   "id": "B04",
+   "title": "เอกสารดิจิทัล + /verify + tamper · Dashboard + ส่งออก xlsx/pdf · Audit + csv + 405 · Admin · PDPA แสดงเลขเต็ม",
+   "size": "L",
+   "depends_on": ["B01"],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "src/modules/mgmt/",
+   "done": "ตัวเลข Dashboard เริ่มต้นตรง TC-DASH-01 · ส่งออกได้ · /verify 3 กรณี · BUG_MODE B10 B11 เปิดปิดได้",
+   "detail": "อ่าน CONTRACT §2.9–2.11 §2.13 §5 §6.4 §6.5 §6.8 §7 · REQUIREMENTS (DOC DASH AUDIT ADMIN PDPA) · TEST-DATA · BUGS B10 B11",
+   "agent": "agent-mgmt"
+  },
+  {
+   "id": "T1",
+   "title": "Playwright ส่วน 1: AUTH FEE SUBMIT UPLOAD PAY QUEUE SLA NOTI (22 TC) + ไฟล์ทดสอบ",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "tests/e2e/part1/",
+   "done": "ทุก TC ในหมวดมี test ชื่อขึ้นต้นด้วยรหัส TC · playwright test --list เห็นครบ 22",
+   "detail": "อ่านได้แค่ TEST-PLAN CONTRACT TEST-DATA ห้ามอ่านโค้ดเว็บ จึงไม่ต้องรอบล็อกเว็บ",
+   "agent": "agent-test-1"
+  },
+  {
+   "id": "T2",
+   "title": "Playwright ส่วน 2: WORKFLOW DOC PDPA DASH AUDIT RBAC NFR (29 TC)",
+   "size": "M",
+   "depends_on": [],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "tests/e2e/part2/",
+   "done": "ทุก TC ในหมวดมี test ชื่อขึ้นต้นด้วยรหัส TC · playwright test --list เห็นครบ 29",
+   "detail": "อ่านได้แค่ TEST-PLAN CONTRACT TEST-DATA ห้ามอ่านโค้ดเว็บ จึงไม่ต้องรอบล็อกเว็บ",
+   "agent": "agent-test-2"
+  },
+  {
+   "id": "B07",
+   "title": "รวม + รัน Playwright ชุดเต็มใน WSL docker จนผ่าน 51/51 + test-report + GIF ของ TC P1",
+   "size": "M",
+   "depends_on": ["B02", "B03", "B04", "T1", "T2"],
+   "skill": "yolo",
+   "difficulty": 4,
+   "output": "tests/runs/final/",
+   "done": "51/51 ผ่านบนเว็บที่ไม่ตั้ง BUG_MODE · ข้อที่เคยล้มจำแนก เว็บผิด/test ผิด/โจทย์ผิด แล้ว",
+   "exclusive": true,
+   "agent": "orchestrator"
+  },
+  {
+   "id": "B08",
+   "title": "BUG_MODE B01–B12 ทีละตัว + ตาราง triage (BUG-HUNT)",
+   "size": "M",
+   "depends_on": ["B07"],
+   "skill": "yolo",
+   "difficulty": 3,
+   "output": "tests/runs/bug-matrix/",
+   "done": "12/12 บั๊กถูกจับด้วย TC ที่ BUGS.md ระบุ · TC อื่นผ่าน (ยกเว้นข้อที่ BUGS.md บอกว่าอาจล้มด้วย)",
+   "exclusive": true,
+   "agent": "orchestrator"
+  }
+ ]
 }

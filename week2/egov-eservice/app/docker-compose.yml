@@ -1,0 +1,18 @@
+# ใช้: TEST_MODE=1 BUG_MODE=B03 docker compose up -d --build   (ไม่ตั้ง = ปิด test hook / ไม่มีบั๊ก)
+# ไฟล์ฐานข้อมูลอยู่ที่ ./data/egov.db บนเครื่อง (bind mount) ให้ TC-NFR-04 อ่านได้
+services:
+  web:
+    build: .
+    image: egov-eservice:local
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+    environment:
+      TEST_MODE: "${TEST_MODE:-}"
+      BUG_MODE: "${BUG_MODE:-}"
+      BASE_URL: "${BASE_URL:-}"
+      PORT: "3000"
+      DB_PATH: /data/egov.db
+      TZ: Asia/Bangkok
+    volumes:
+      - ./data:/data
+    restart: unless-stopped

@@ -3,3 +3,17 @@
 {"block":"B01","event":"start","at":"2026-11-23T12:02:47+07:00"}
 {"block":"T1","event":"start","at":"2026-11-23T12:02:47+07:00"}
 {"block":"T2","event":"start","at":"2026-11-23T12:02:47+07:00"}
+{"block":"T1","event":"interrupted","at":"2026-11-23T12:21:43+07:00","note":"5-hour usage limit hit; resumed after account change"}
+{"block":"T2","event":"interrupted","at":"2026-11-23T12:21:43+07:00","note":"5-hour usage limit hit; resumed after account change"}
+{"block":"T1","event":"resume","at":"2026-11-23T12:21:43+07:00"}
+{"block":"T2","event":"resume","at":"2026-11-23T12:21:43+07:00"}
+{"block":"T1","event":"end","at":"2026-11-23T12:22:36+07:00"}
+{"block":"T2","event":"end","at":"2026-11-23T12:30:35+07:00"}
+{"block":"B01","event":"end","at":"2026-11-23T12:32:38+07:00"}
+{"block":"B02","event":"start","at":"2026-11-23T12:32:38+07:00"}
+{"block":"B03","event":"start","at":"2026-11-23T12:32:38+07:00"}
+{"block":"B04","event":"start","at":"2026-11-23T12:32:38+07:00"}
+{"block":"B04","event":"end","at":"2026-11-23T12:43:21+07:00"}
+{"block":"B03","event":"end","at":"2026-11-23T12:44:26+07:00"}
+{"block":"B02","event":"end","at":"2026-11-23T12:44:52+07:00"}
+{"block":"B07","event":"start","at":"2026-11-23T12:44:52+07:00"}
