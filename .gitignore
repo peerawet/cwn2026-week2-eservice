@@ -1,0 +1,7 @@
+node_modules/
+week2/egov-eservice/app/data/
+week2/egov-eservice/app/tests/runs/latest/
+week2/egov-eservice/app/tests/test-results/
+week2/egov-eservice/app/tests/fixtures/files/
+*.db
+*.db-*
