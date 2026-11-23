@@ -31,9 +31,3 @@ TEST_MODE=1 BUG_MODE=B03,B07 docker compose up --build
 bash scripts/run-suite.sh <ชื่อรอบ> [BUG_MODE]   # เว็บ + Playwright (container v1.56.1) → tests/runs/<ชื่อรอบ>/
 node scripts/bug-matrix.mjs                      # B01–B12 + ชุดผสม เทียบกับ BUGS.md
 ```
-
-## ข้อควรรู้ตรงๆ
-
-- **ไม่ได้ใช้ container `multi-account` และสกิล `dag-planner`/`agent-team` ตามพรอมต์คอร์ส** (ไม่มีในเครื่อง) — ทีมเอเจนต์คือ subagent ของ Claude Code บัญชีเดียว; `dagplan.py` ใช้เฉพาะขั้นวางแผน ด้วยโควตาสมมติ `yolo1:80,yolo2:60,cyolo1:90,cyolo2:70` จึงไม่ตรงกับที่รันจริง
-- ผลรัน 51 TC ครั้งแรกล้ม 5 ข้อ และรอบถัดๆ ไปล้มอีก 1+1 ข้อ ทั้งหมดจำแนกเป็น **test ผิด** (กลไกดักไฟล์ดาวน์โหลด · เงื่อนไขเริ่มต้นที่การ์ดไม่ได้กำหนด · regex จับวันที่ใน metadata PDF · race ตอนแนบไฟล์) ไม่ได้แก้ค่าที่คาดหวังจากการ์ด TC — ดูผลดิบใน `app/tests/runs/normal-1..3`
-- ThaiD, PromptPay, ลายเซ็นดิจิทัล เป็นตัวจำลองทั้งหมด หน่วยงานเป็นของสมมติ
