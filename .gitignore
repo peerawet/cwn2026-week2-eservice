@@ -5,3 +5,7 @@ week2/egov-eservice/app/tests/test-results/
 week2/egov-eservice/app/tests/fixtures/files/
 *.db
 *.db-*
+
+# รายงาน HTML/trace ของ Playwright ใหญ่และซ้ำ — เก็บเฉพาะ list.txt + results.json เป็นหลักฐาน
+week2/egov-eservice/app/tests/runs/*/html/
+week2/egov-eservice/app/tests/runs/*/test-results/

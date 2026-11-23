@@ -1,0 +1,39 @@
+# cwn2026-week2-eservice
+
+LAB Week 2 · e-Service กลางของ "เทศบาลนครตัวอย่าง" (สมมติ) — สร้างเว็บตามชุดโจทย์ของ TA แล้วพิสูจน์ด้วย Playwright
+
+> **สถานะ: ยังไม่เสร็จ (อัปเดตตามความจริง)**
+> | ขั้น | สถานะ |
+> |---|---|
+> | วางแผน (`blocks.json` · `PLAN.md` · `dag.png` · `gantt-plan.png`) | ✅ |
+> | สร้างเว็บ (`week2/egov-eservice/app`) | ✅ |
+> | Playwright 51 TC กับเว็บปกติ | ✅ 51/51 ผ่าน 2 รอบติดกัน (`app/tests/runs/normal-4`, `normal-5`) |
+> | BUG_MODE B01–B12 + `BUG-HUNT.md` | 🔄 กำลังรัน |
+> | `REPORT.md` · `gantt-actual.png` · `compare.png` | ⏳ ยังไม่ทำ |
+
+## โครง
+
+```text
+week2/egov-brief/        ชุดโจทย์กลางของ TA (อ่านอย่างเดียว ที่มา: ชุดโจทย์ของคอร์ส)
+week2/egov-eservice/
+  blocks.json PLAN.md dag.png gantt-plan.png   แผนจาก dagplan.py (โควตาสมมติ)
+  timing/events.jsonl                          เวลาเริ่ม/จบ/สะดุดจริงของแต่ละบล็อก
+  app/                                         เว็บ Node 22 + Express + node:sqlite (INTERFACES.md อธิบายโครง)
+  app/tests/                                   Playwright 51 TC (e2e/part1, e2e/part2) + runs/ (ผลรันจริง)
+```
+
+## รัน (ใน WSL/Linux ที่มี docker)
+
+```bash
+cd week2/egov-eservice/app
+TEST_MODE=1 docker compose up --build            # เว็บที่ http://localhost:3000
+TEST_MODE=1 BUG_MODE=B03,B07 docker compose up --build
+bash scripts/run-suite.sh <ชื่อรอบ> [BUG_MODE]   # เว็บ + Playwright (container v1.56.1) → tests/runs/<ชื่อรอบ>/
+node scripts/bug-matrix.mjs                      # B01–B12 + ชุดผสม เทียบกับ BUGS.md
+```
+
+## ข้อควรรู้ตรงๆ
+
+- **ไม่ได้ใช้ container `multi-account` และสกิล `dag-planner`/`agent-team` ตามพรอมต์คอร์ส** (ไม่มีในเครื่อง) — ทีมเอเจนต์คือ subagent ของ Claude Code บัญชีเดียว; `dagplan.py` ใช้เฉพาะขั้นวางแผน ด้วยโควตาสมมติ `yolo1:80,yolo2:60,cyolo1:90,cyolo2:70` จึงไม่ตรงกับที่รันจริง
+- ผลรัน 51 TC ครั้งแรกล้ม 5 ข้อ และรอบถัดๆ ไปล้มอีก 1+1 ข้อ ทั้งหมดจำแนกเป็น **test ผิด** (กลไกดักไฟล์ดาวน์โหลด · เงื่อนไขเริ่มต้นที่การ์ดไม่ได้กำหนด · regex จับวันที่ใน metadata PDF · race ตอนแนบไฟล์) ไม่ได้แก้ค่าที่คาดหวังจากการ์ด TC — ดูผลดิบใน `app/tests/runs/normal-1..3`
+- ThaiD, PromptPay, ลายเซ็นดิจิทัล เป็นตัวจำลองทั้งหมด หน่วยงานเป็นของสมมติ
